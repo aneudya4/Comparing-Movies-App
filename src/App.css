@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+#root {
+  background: #f9f9f9;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.card {
+  border: 2px solid black;
+  float: left;
+  position: relative;
+  width: 20%;
+  margin: 10px 2.5% 30px 2.5%;
+}
+
+.card img {
+  width: 100%;
+  margin-bottom: 0;
+  vertical-align: middle;
+}
+
+table {
+  clear: both;
+  background: white;
+  border: 1px solid #f9f9f9;
+}
+
+table {
+  margin: 0 auto;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 93%;
+}
+thead tr th {
+  padding: 18px;
+}
+
+td,
+th {
+  /* border: 1px solid #dddddd; */
+  text-align: center;
+  padding: 8px;
+  border-bottom: 2px solid #f9f9f9;
+}
+
+.title {
+  text-align: center;
+  border-top: 1px solid black;
+}
+
+.title p {
+  margin: 10px;
+  width: 100%;
+}
+
+.overLay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: aqua;
+  opacity: 0.7;
+  width: 100%;
+  opacity: 0.5;
+  transition: 3s;
+}
+
+span {
+  text-align: center;
+  display: inline-block;
+  padding: 0.7em;
+  border: 1px solid white;
+  position: absolute;
+  top: 35%;
+  left: 25%;
+  font-size: 19px;
+  width: 50%;
+  color: white;
+}
+
+span:hover {
+  background: white;
+  color: aqua;
+}
+
+@media screen and (max-width: 960px) {
+  .card {
+    width: 45%;
+  }
+}
+@media screen and (max-width: 620px) {
+  .card {
+    float: none;
+    width: 100%;
+  }
+}
