@@ -71,8 +71,7 @@ class Card extends Component {
         <div className="stats">
           <div className="title">
             <p>
-              <strong> Movie Title:</strong> <br />
-              {movie.title}
+              <strong>{movie.title}</strong>
             </p>
           </div>
         </div>

@@ -24,7 +24,11 @@ class ComparingTable extends React.Component {
         </td>
         <td>{movie.release_date}</td>
         <td>{movie.vote_count}</td>
-        <td className={parseInt(movie.vote_average, 10) < 7 ? "votes" : null}>
+        <td
+          className={
+            parseInt(movie.vote_average, 10) < 7 ? "votes-bad" : "votes-good"
+          }
+        >
           {movie.vote_average}
           {this.props.movies > 1 ? this.renderRows(movie.vote_average) : null}
         </td>

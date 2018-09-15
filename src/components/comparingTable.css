@@ -19,6 +19,9 @@ th {
   border-bottom: 2px solid white;
 }
 
-.votes {
+.votes-bad {
   background: #e33636;
+}
+.votes-good {
+  background: #94ea93;
 }
