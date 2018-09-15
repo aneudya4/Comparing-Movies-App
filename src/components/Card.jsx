@@ -6,18 +6,18 @@ class Card extends Component {
 
   // comparing function
   handleCompare = id => {
-    const { comparing, click } = this.state;
+    const { comparing } = this.state;
     this.props.onCompare(id);
     if (!comparing) {
       this.setState({ comparing: true });
     } else if (comparing) {
-      this.setState({ comparing: !comparing, click: !click });
+      this.setState({ comparing: !comparing });
     }
   };
   // removing movies
   handleRemove = id => {
     this.props.onRemoveCompare(id);
-    this.setState({ comparing: false, click: !this.state.click });
+    this.setState({ comparing: !this.state.comparing });
   };
   // set the state for the hover effect
   hoverEffect = () => {
@@ -25,7 +25,7 @@ class Card extends Component {
   };
   // rendering the compare button
   renderCompareButton(movie) {
-    let animation = this.state.effect ? "animation" : "notAnimation";
+    let animation = !this.state.effect ? "notAnimation" : "";
     if (this.state.comparing) return null;
     return (
       <span
@@ -40,7 +40,7 @@ class Card extends Component {
   // renders the  remove button
   renderRemoveButton(movie) {
     const { comparing, effect } = this.state;
-    let animation = effect ? "animation" : "notAnimation";
+    let animation = !effect ? "notAnimation" : "";
     if (!comparing) return null;
     return (
       <span
