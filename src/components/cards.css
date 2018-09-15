@@ -3,6 +3,9 @@ h1 {
   padding: 10px;
   margin-bottom: 45px;
 }
+.cards {
+  margin: 20px;
+}
 .card {
   border: 1px solid #ddd;
   float: left;
