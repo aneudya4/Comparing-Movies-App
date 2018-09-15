@@ -9,107 +9,10 @@
   background: #f9f9f9;
   max-width: 1200px;
   margin: 0 auto;
-  overflow: hidden;
-  margin-bottom: 30px;
+  height: 970px;
 }
 
-.card {
-  border: 1px solid #ddd;
-  float: left;
-  position: relative;
-  width: 20%;
-  margin: 10px 2.5% 30px 2.5%;
-}
-
-.card .stats {
-  height: 60px;
-}
-.card img {
-  width: 100%;
-  margin-bottom: 0;
-  vertical-align: middle;
-}
-
-.card:hover {
-  box-shadow: 0px 5px 10px #888888;
-  transition: 1s;
-}
-
-table {
-  clear: both;
-  background: white;
-  border: 1px solid #f9f9f9;
-}
-
-table {
-  margin: 0 auto;
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 93%;
-}
-thead tr th {
-  padding: 18px;
-}
-
-td,
-th {
-  /* border: 1px solid #dddddd; */
-  text-align: center;
-  padding: 8px;
-  border-bottom: 2px solid #f9f9f9;
-}
-
-.title {
-  text-align: center;
-}
-
-.title p {
-  margin: 10px;
-  width: 100%;
-}
-
-.card:hover .overLay,
-.card.comparing .overLay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: calc(100% - 69px);
-  background-color: #302e2e;
-  opacity: 0.7;
-  width: 100%;
-  opacity: 0.5;
-  transition: 1s;
-}
-
-span {
-  display: none;
-  text-align: center;
-  display: inline-block;
-  padding: 0.7em;
-  border: 1px solid white;
-  position: absolute;
-  top: 35%;
-  left: 25%;
-  font-size: 19px;
-  width: 50%;
-  color: white;
-}
-
-.card span.compare_button,
-.card span.remove_button {
-  display: none;
-}
-.card:hover span.compare_button,
-.card:hover span.remove_button {
-  display: inline-block;
-}
-
-span:hover {
-  background: none;
-  box-shadow: 0px 2px 10px white;
-}
-
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 885px) {
   .card {
     width: 45%;
   }
@@ -119,17 +22,4 @@ span:hover {
     float: none;
     width: 100%;
   }
-}
-
-.carousel__container {
-  height: 500px;
-  width: 500px;
-  overflow: hidden;
-  margin: 0 auto;
-}
-.carousel__viewport {
-  height: 100%;
-}
-.carousel__viewport img {
-  display: inline;
 }

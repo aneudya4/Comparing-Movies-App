@@ -21,18 +21,6 @@ class App extends Component {
   }
 
   onCompare = id => {
-    // const { movies, moviesToCompare } = this.state;
-    // const movieFilter = movie => movie.id === id;
-    // if (moviesToCompare.length === 0) {
-    //   // You are not reassigning moviesToCompare, use const instead
-    //   let moviesToCompare = movies.filter(movieFilter);
-    //   this.setState({ moviesToCompare });
-    // } else {
-    //   let moviesToCompare = [...this.state.moviesToCompare];
-    //   let newMovie = movies.filter(movieFilter);
-    //   moviesToCompare.push(newMovie[0]); // instead of using filter, use find que te va a
-    //   this.setState({ moviesToCompare });
-    // }
     const { movies, moviesToCompare } = this.state;
     const newMovie = movies.find(movie => movie.id === id);
     moviesToCompare.push(newMovie);
@@ -52,6 +40,7 @@ class App extends Component {
     return (
       <React.Fragment>
         <div className="cards">
+          <h1> Movies Comparing App</h1>
           {movies.map(movie => (
             <Card
               key={movie.id}
