@@ -70,7 +70,7 @@ span {
 
 span:hover {
   cursor: pointer;
-  pointer-events: none;
+  pointer-events: auto;
   background: none;
   box-shadow: 0px 2px 10px white;
 }
