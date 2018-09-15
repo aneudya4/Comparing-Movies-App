@@ -8,7 +8,7 @@
     "react-dom": "^16.5.0",
     "react-scripts": "1.1.5"
   },
-  "homepage": "https://aneudya4.github.io/comparing",
+  "homepage": "https://aneudya4.github.io/Comparing-movies-app",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
