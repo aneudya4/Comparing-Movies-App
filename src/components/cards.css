@@ -78,13 +78,21 @@ span:hover {
   left: 22%;
   visibility: hidden;
   width: 60%;
-  transform: translateY(-40px);
+  transform: translateY(-40px); /* W3C */
+  -webkit-transform: translateY(-40px); /* Safari & Chrome */
+  -moz-transform: translateY(-40px); /* Firefox */
+  -ms-transform: translateY(-40px); /* Internet Explorer */
+  -o-transform: translateY(-40px); /* Opera */
   transition: linear 210ms;
 }
 .animation {
   left: 25%;
   width: 50%;
   display: inline;
-  transform: translateY(40px);
+  transform: translateY(40px); /* W3C */
+  -webkit-transform: translateY(40px); /* Safari & Chrome */
+  -moz-transform: translateY(40px); /* Firefox */
+  -ms-transform: translateY(40px); /* Internet Explorer */
+  -o-transform: translateY(40px); /* Opera */
   transition: all 200ms ease-out;
 }
