@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Card from "./components/Card";
+import { URL } from "./constants/config";
 
 import "./App.css";
 import ComparingTable from "./components/ComparingTable";
@@ -7,35 +8,39 @@ import ComparingTable from "./components/ComparingTable";
 class App extends Component {
   state = { movies: [], moviesToCompare: [] };
 
-  getting = async () => {
-    const url =
-      "https://api.themoviedb.org/3/movie/now_playing?api_key=d35dda56d61ee0678a341b8d5c804efc&language=en-US&page=1&region=US";
-    const response = await fetch(url);
+  fetchMovies = async () => {
+    const response = await fetch(URL);
     const data = await response.json();
     const filtered = data.results.filter((data, i) => i < 4);
-
     return filtered;
   };
+
   componentDidMount() {
-    this.getting().then(movies => this.setState({ movies }));
+    // Function names should be meaningful
+    this.fetchMovies().then(movies => this.setState({ movies }));
   }
 
   onCompare = id => {
+    // const { movies, moviesToCompare } = this.state;
+    // const movieFilter = movie => movie.id === id;
+    // if (moviesToCompare.length === 0) {
+    //   // You are not reassigning moviesToCompare, use const instead
+    //   let moviesToCompare = movies.filter(movieFilter);
+    //   this.setState({ moviesToCompare });
+    // } else {
+    //   let moviesToCompare = [...this.state.moviesToCompare];
+    //   let newMovie = movies.filter(movieFilter);
+    //   moviesToCompare.push(newMovie[0]); // instead of using filter, use find que te va a
+    //   this.setState({ moviesToCompare });
+    // }
     const { movies, moviesToCompare } = this.state;
-
-    if (moviesToCompare.length === 0) {
-      let moviesToCompare = movies.filter(movie => movie.id === id);
-      this.setState({ moviesToCompare });
-    } else {
-      let moviesToCompare = [...this.state.moviesToCompare];
-      let newMovie = movies.filter(movie => movie.id === id);
-      moviesToCompare.push(newMovie[0]);
-      this.setState({ moviesToCompare });
-    }
+    const newMovie = movies.find(movie => movie.id === id);
+    moviesToCompare.push(newMovie);
+    this.setState({ moviesToCompare });
   };
 
   onRemoveCompare = id => {
-    let moviesToCompare = this.state.moviesToCompare.filter(
+    const moviesToCompare = this.state.moviesToCompare.filter(
       movie => movie.id !== id
     );
     this.setState({ moviesToCompare });
@@ -56,10 +61,7 @@ class App extends Component {
             />
           ))}
         </div>
-
-        {moviesToCompare.length >= 2 && (
-          <ComparingTable movies={moviesToCompare} />
-        )}
+        <ComparingTable movies={moviesToCompare} />
       </React.Fragment>
     );
   }

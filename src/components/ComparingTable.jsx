@@ -1,11 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
 
-class ComparingTable extends Component {
-  state = {};
-  shouldComponentUpdate(nextProps, nextState) {
-    return this.props !== nextProps;
-  }
+class ComparingTable extends React.Component {
   render() {
+    if (this.props.movies.length <= 1) {
+      return null;
+    }
+
     return (
       <table>
         <thead>
