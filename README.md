@@ -9,7 +9,7 @@ The movie are being fetch from https://www.themoviedb.org and 8 popular movies a
 https://github.com/facebookincubator/create-react-app#npm-start-or-yarn-start</p>
 
 <div align="center">
-    <img src="https://github.com/aneudya4/Comparing-movies-app/blob/master/public/Compare%20Movies%20App.png"</img> 
+    <img src="https://github.com/aneudya4/Comparing-movies-app/blob/master/public/Comparing%20Movies%20App.png"</img> 
 </div>
  <h3> Demo </h3>
 <p>https://aneudya4.github.io/Comparing-movies-app/</p>
