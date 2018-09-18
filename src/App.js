@@ -11,7 +11,7 @@ class App extends Component {
   fetchMovies = async () => {
     const response = await fetch(URL);
     const data = await response.json();
-    const filtered = data.results.filter((data, i) => i < 4);
+    const filtered = data.results.filter((data, i) => i < 8);
     return filtered;
   };
 
@@ -40,7 +40,12 @@ class App extends Component {
     return (
       <React.Fragment>
         <div className="cards">
-          <h1> Movies Comparing App</h1>
+          <h1>Movies Comparing App</h1>
+          <p>
+            These are 8 movies currently playing in theaters
+            <br /> Click two movies to start Comparing them ,movies with a vote
+            average less than 7 get a Red-Warning background
+          </p>
           {movies.map(movie => (
             <Card
               key={movie.id}
