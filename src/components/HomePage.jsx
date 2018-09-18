@@ -43,8 +43,8 @@ class HomePage extends Component {
             These are {movies.length}
             {` `}
             movies currently playing in theaters
-            <br /> Click two movies to start Comparing them ,movies with a vote
-            average less than 7 get a Red-Warning background
+            <br /> Click two movies or more to start Comparing them ,movies with
+            a vote average less than 7 get a Red-Warning background
           </p>
           {movies.map(movie => (
             <Card
