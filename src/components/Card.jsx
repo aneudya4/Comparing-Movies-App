@@ -38,7 +38,7 @@ class Card extends Component {
 
   // renders the  remove button
   renderRemoveButton(movie) {
-    const { comparing, effect } = this.state;
+    const { comparing } = this.state;
 
     if (!comparing) return null;
     return (
