@@ -1,7 +1,7 @@
 # Comparing-movies-app
 
 My version of the Comparing app example on the React webpage with React and pure CSS. <br/>
-The movie are being fetch from https://www.themoviedb.org and only 4 popular movies are being fetch
+The movie are being fetch from https://www.themoviedb.org and 4 popular movies are being shown
 
 <h2> Usage </h2>
 <h3>Documentation how to run, build and test app</h3>
