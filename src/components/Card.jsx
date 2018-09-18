@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./cards.css";
 
 class Card extends Component {
-  state = { hover: false, comparing: false, effect: false };
+  state = { hover: false, comparing: false };
 
   // comparing function
   handleCompare = id => {
@@ -25,11 +25,10 @@ class Card extends Component {
   };
   // rendering the compare button
   renderCompareButton(movie) {
-    let animation = !this.state.effect ? "notAnimation" : "";
     if (this.state.comparing) return null;
     return (
       <span
-        className={`compare_button ${animation}`}
+        className="compare_button notAnimation"
         onClick={() => this.handleCompare(movie.id)}
       >
         Compare
@@ -40,11 +39,11 @@ class Card extends Component {
   // renders the  remove button
   renderRemoveButton(movie) {
     const { comparing, effect } = this.state;
-    let animation = !effect ? "notAnimation" : "";
+
     if (!comparing) return null;
     return (
       <span
-        className={`remove_button ${animation}`}
+        className="remove_button notAnimation"
         onClick={() => this.handleRemove(movie.id)}
       >
         Remove
@@ -56,11 +55,7 @@ class Card extends Component {
     const { movie } = this.props;
     const { comparing } = this.state;
     return (
-      <div
-        onMouseEnter={this.hoverEffect}
-        onMouseLeave={this.hoverEffect}
-        className={`card ${comparing ? "comparing" : ""}`}
-      >
+      <div className={`card ${comparing ? "comparing" : ""}`}>
         <img
           src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
           alt={movie.title}
