@@ -1,3 +1,9 @@
+#root p {
+  font-size: 1.5em;
+  margin-bottom: 1.2em;
+  text-align: center;
+}
+
 table {
   clear: both;
   background: white;

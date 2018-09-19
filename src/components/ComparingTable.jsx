@@ -35,22 +35,26 @@ class ComparingTable extends React.Component {
   }
 
   render() {
-    if (this.props.movies.length <= 1) {
+    const { movies } = this.props;
+    if (movies.length <= 1) {
       return null;
     }
 
     return (
-      <table>
-        <thead>
-          <tr>
-            <th>Movie Title</th>
-            <th>Release Date</th>
-            <th>Vote Count</th>
-            <th>Vote Average</th>
-          </tr>
-        </thead>
-        <tbody>{this.renderRows()}</tbody>
-      </table>
+      <React.Fragment>
+        <p>Currently Comparing {movies.length} Movies</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Movie Title</th>
+              <th>Release Date</th>
+              <th>Vote Count</th>
+              <th>Vote Average</th>
+            </tr>
+          </thead>
+          <tbody>{this.renderRows()}</tbody>
+        </table>
+      </React.Fragment>
     );
   }
 }

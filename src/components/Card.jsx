@@ -6,7 +6,7 @@ class Card extends Component {
     super(props);
     this.state = { hover: false, comparing: false };
     this.handleCompare = this.handleCompare.bind(this);
-    this.handleRemove = this.handleRemove.bind(this);
+    this.handleRemove = this.handleCompare.bind(this);
   }
 
   // comparing function
@@ -24,10 +24,7 @@ class Card extends Component {
     this.props.onRemoveCompare(id);
     this.setState({ comparing: !this.state.comparing });
   }
-  // set the state for the hover effect
-  hoverEffect = () => {
-    this.setState({ effect: !this.state.effect });
-  };
+
   // rendering the compare button
   renderCompareButton(movie) {
     if (this.state.comparing) return null;
