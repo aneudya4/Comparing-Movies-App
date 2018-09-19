@@ -2,10 +2,15 @@ import React, { Component } from "react";
 import "./cards.css";
 
 class Card extends Component {
-  state = { hover: false, comparing: false };
+  constructor(props) {
+    super(props);
+    this.state = { hover: false, comparing: false };
+    this.handleCompare = this.handleCompare.bind(this);
+    this.handleRemove = this.handleRemove.bind(this);
+  }
 
   // comparing function
-  handleCompare = id => {
+  handleCompare(id) {
     const { comparing } = this.state;
     this.props.onCompare(id);
     if (!comparing) {
@@ -13,12 +18,12 @@ class Card extends Component {
     } else if (comparing) {
       this.setState({ comparing: !comparing });
     }
-  };
+  }
   // removing movies
-  handleRemove = id => {
+  handleRemove(id) {
     this.props.onRemoveCompare(id);
     this.setState({ comparing: !this.state.comparing });
-  };
+  }
   // set the state for the hover effect
   hoverEffect = () => {
     this.setState({ effect: !this.state.effect });

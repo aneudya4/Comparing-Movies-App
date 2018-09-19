@@ -6,9 +6,7 @@ class ComparingTable extends React.Component {
   renderRows() {
     const movies = [...this.props.movies];
     movies.sort(
-      (a, b) =>
-        Math.round(parseFloat(b.vote_average)) -
-        Math.round(parseFloat(a.vote_average))
+      (a, b) => parseFloat(b.vote_average) - parseFloat(a.vote_average)
     );
 
     return movies.map(movie => (
