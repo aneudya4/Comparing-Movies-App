@@ -4,7 +4,7 @@ class ShowVideo extends Component {
   state = { results: [] };
 
   handleClick = () => {
-    this.props.history.push("/");
+    this.props.history.push("/Comparing-movies-app");
   };
 
   fetchMoviesTrailers = async () => {
