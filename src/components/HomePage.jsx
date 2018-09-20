@@ -10,12 +10,12 @@ class HomePage extends Component {
   fetchMovies = async () => {
     const response = await fetch(URL);
     const data = await response.json();
-    const filtered = data.results.filter((data, i) => i < 8);
-    return filtered;
+    const movies = data.results.filter((data, i) => i < 8);
+    return this.setState({ movies });
   };
 
   componentDidMount() {
-    this.fetchMovies().then(movies => this.setState({ movies }));
+    this.fetchMovies();
   }
 
   onCompare = id => {

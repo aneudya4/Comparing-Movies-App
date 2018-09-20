@@ -1,36 +1,38 @@
 import React, { Component } from "react";
 
 class ShowVideo extends Component {
-  state = { name: "", key: "" };
+  state = { results: [] };
 
   handleClick = () => {
     this.props.history.push("/");
   };
 
-  componentDidMount() {
+  fetchMoviesTrailers = async () => {
     const id = this.props.match.params.id;
-    let url = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=d35dda56d61ee0678a341b8d5c804efc&language=en-US`;
-    let movieData = fetch(url)
-      .then(data => data.json())
-      .then(movie => movie.results[0]);
-    movieData.then(movie =>
-      this.setState({ name: movie.name, key: movie.key })
-    );
+    const url = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=d35dda56d61ee0678a341b8d5c804efc&language=en-US`;
+    const fetchigData = await fetch(url);
+    const movieData = await fetchigData.json();
+    const results = movieData.results;
+    this.setState({ results });
+  };
+
+  componentDidMount() {
+    this.fetchMoviesTrailers();
   }
   render() {
-    const { name, key } = this.state;
-    if (key === "") {
+    const { results } = this.state;
+    if (results[0] === undefined) {
       return null;
     }
     return (
       <div className="trailer">
         <iframe
-          title={name}
+          title={results[0].name}
           width="720"
           height="545"
-          src={`https://www.youtube.com/embed/${key}`}
+          src={`https://www.youtube.com/embed/${results[0].key}`}
         />
-        <h1>{name}</h1>
+        <h1>{results[0].name}</h1>
         <button className="bg-1 button" onClick={this.handleClick}>
           Back to All Movies
         </button>

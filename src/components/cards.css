@@ -105,6 +105,9 @@ h1 {
   .card {
     width: 45%;
   }
+  .trailer {
+    margin: 0 auto;
+  }
 }
 @media screen and (max-width: 620px) {
   .card {
