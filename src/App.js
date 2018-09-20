@@ -6,12 +6,12 @@ import { BrowserRouter, Route } from "react-router-dom";
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
-        <div className="app">
-          <Route exact path="/" component={HomePage} />
+      <div className="app">
+        <switch>
           <Route path="/:id" component={ShowVideo} />
-        </div>
-      </BrowserRouter>
+          <Route exact path="/" component={HomePage} />
+        </switch>
+      </div>
     );
   }
 }

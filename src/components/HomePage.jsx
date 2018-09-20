@@ -34,6 +34,7 @@ class HomePage extends Component {
 
   render() {
     const { movies, moviesToCompare } = this.state;
+    if (movies.length === 0) return <h1>Movies Are Being Fetch</h1>;
 
     return (
       <React.Fragment>
