@@ -138,6 +138,7 @@ h1 {
 
   .trailer {
     width: 475px;
+    text-align: left;
   }
   iframe {
     width: 475px;
@@ -146,4 +147,20 @@ h1 {
   .trailer h1 {
     font-size: 20px;
   }
+  .button {
+    margin-left: 0;
+  }
+}
+
+/* button */
+
+.button {
+  margin: 0 auto;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 10px;
+}
+
+.button:hover {
+  background: lightslategray;
 }
