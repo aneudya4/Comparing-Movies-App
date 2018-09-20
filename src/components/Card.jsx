@@ -1,16 +1,12 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "./cards.css";
 
 class Card extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { hover: false, comparing: false };
-    this.handleCompare = this.handleCompare.bind(this);
-    this.handleRemove = this.handleCompare.bind(this);
-  }
+  state = { hover: false, comparing: false };
 
   // comparing function
-  handleCompare(id) {
+  handleCompare = id => {
     const { comparing } = this.state;
     this.props.onCompare(id);
     if (!comparing) {
@@ -18,25 +14,25 @@ class Card extends Component {
     } else if (comparing) {
       this.setState({ comparing: !comparing });
     }
-  }
+  };
   // removing movies
-  handleRemove(id) {
+  handleRemove = id => {
     this.props.onRemoveCompare(id);
     this.setState({ comparing: !this.state.comparing });
-  }
+  };
 
   // rendering the compare button
-  renderCompareButton(movie) {
+  renderCompareButton = movie => {
     if (this.state.comparing) return null;
     return (
       <span
-        className="compare_button notAnimation"
+        className="btn compare_button notAnimation"
         onClick={() => this.handleCompare(movie.id)}
       >
         Compare
       </span>
     );
-  }
+  };
 
   // renders the  remove button
   renderRemoveButton(movie) {
@@ -45,7 +41,7 @@ class Card extends Component {
     if (!comparing) return null;
     return (
       <span
-        className="remove_button notAnimation"
+        className="btn remove_button notAnimation"
         onClick={() => this.handleRemove(movie.id)}
       >
         Remove
@@ -70,6 +66,7 @@ class Card extends Component {
             <p>
               <strong>{movie.title}</strong>
             </p>
+            <Link to={`/${movie.id}`}> Watch trailer </Link>
           </div>
         </div>
       </div>

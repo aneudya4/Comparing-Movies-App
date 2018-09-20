@@ -22,7 +22,7 @@ h1 {
 }
 
 .card .stats {
-  height: 60px;
+  height: 105px;
 }
 .card img {
   width: 100%;
@@ -49,7 +49,7 @@ h1 {
   position: absolute;
   top: 0;
   left: 0;
-  height: calc(100% - 75.5px);
+  height: calc(100% - 118.5px);
   background-color: #302e2e;
   opacity: 0.7;
   width: 100%;
@@ -57,7 +57,7 @@ h1 {
   transition: 101ms;
 }
 
-span {
+.btn {
   text-transform: uppercase;
   text-align: center;
   display: inline;
@@ -69,8 +69,8 @@ span {
   color: white;
 }
 
-.card:hover span.compare_button,
-.card:hover span.remove_button {
+.card:hover .btn.compare_button,
+.card:hover .btn.remove_button {
   text-align: center;
   display: inline;
   left: 20%;
@@ -81,7 +81,7 @@ span {
   transition: all 100ms ease-out;
 }
 
-span:hover {
+.btn:hover {
   cursor: pointer;
   pointer-events: auto;
   background: none;
@@ -113,6 +113,17 @@ span:hover {
     float: none;
     width: 100%;
   }
+  .trailer {
+    width: 620px;
+  }
+  iframe {
+    width: 620px;
+  }
+
+  .trailer h1 {
+    text-align: justify;
+    padding: 0;
+  }
 }
 
 @media screen and (max-width: 475px) {
@@ -123,5 +134,16 @@ span:hover {
   .card {
     float: none;
     width: 100%;
+  }
+
+  .trailer {
+    width: 475px;
+  }
+  iframe {
+    width: 475px;
+  }
+
+  .trailer h1 {
+    font-size: 20px;
   }
 }

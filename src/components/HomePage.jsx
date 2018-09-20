@@ -52,6 +52,7 @@ class HomePage extends Component {
               onRemoveCompare={this.onRemoveCompare}
               onCompare={this.onCompare}
               movie={movie}
+              movies={this.state}
             />
           ))}
         </div>

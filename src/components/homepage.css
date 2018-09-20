@@ -11,3 +11,19 @@
   margin: 0 auto;
   height: 970px;
 }
+
+a {
+  text-decoration: none;
+}
+a:visited {
+  color: #6495ed;
+}
+
+.trailer {
+  text-align: center;
+}
+
+.trailer iframe {
+  margin: 20px auto;
+  height: 545px;
+}
