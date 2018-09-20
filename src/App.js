@@ -8,7 +8,7 @@ class App extends Component {
     return (
       <div className="app wrapper">
         <Switch>
-          <Route exact path="/" component={HomePage} />
+          <Route exact path="/Comparing-movies-app" component={HomePage} />
           <Route path="/:id" component={ShowVideo} />
         </Switch>
       </div>
