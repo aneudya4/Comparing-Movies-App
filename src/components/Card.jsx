@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import "./cards.css";
 
@@ -51,6 +52,7 @@ class Card extends Component {
 
   render() {
     const { movie } = this.props;
+    // console.log(typeof this.props.movie);
     const { comparing } = this.state;
     return (
       <div className={`card ${comparing ? "comparing" : ""}`}>
@@ -73,5 +75,10 @@ class Card extends Component {
     );
   }
 }
+Card.propTypes = {
+  movie: PropTypes.object.isRequired,
+  onCompare: PropTypes.func.isRequired,
+  onRemoveCompare: PropTypes.func.isRequired
+};
 
 export default Card;

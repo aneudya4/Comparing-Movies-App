@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "./comparingTable.css";
 
 class ComparingTable extends React.Component {
@@ -9,6 +10,7 @@ class ComparingTable extends React.Component {
       (a, b) => parseFloat(b.vote_average) - parseFloat(a.vote_average)
     );
 
+    // returning tables
     return movies.map(movie => (
       <tr key={movie.id}>
         <td
@@ -58,5 +60,8 @@ class ComparingTable extends React.Component {
     );
   }
 }
+ComparingTable.prototypes = {
+  movies: PropTypes.object.isRequired
+};
 
 export default ComparingTable;

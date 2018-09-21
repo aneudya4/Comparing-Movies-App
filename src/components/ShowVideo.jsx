@@ -21,6 +21,7 @@ class ShowVideo extends Component {
   }
   render() {
     const { results } = this.state;
+
     if (results[0] === undefined) {
       return null;
     }
@@ -32,6 +33,7 @@ class ShowVideo extends Component {
           height="545"
           src={`https://www.youtube.com/embed/${results[0].key}`}
         />
+
         <h1>{results[0].name}</h1>
         <button className="bg-1 button" onClick={this.handleClick}>
           Back to All Movies

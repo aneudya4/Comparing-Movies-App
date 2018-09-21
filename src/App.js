@@ -6,7 +6,7 @@ import { Route, Switch } from "react-router-dom";
 class App extends Component {
   render() {
     return (
-      <div className="app wrapper">
+      <div className="app">
         <Switch>
           <Route exact path="/Comparing-movies-app" component={HomePage} />
           <Route path="/:id" component={ShowVideo} />

@@ -7,6 +7,7 @@ import ComparingTable from "./ComparingTable";
 class HomePage extends Component {
   state = { movies: [], moviesToCompare: [] };
 
+  // fetching movies from API
   fetchMovies = async () => {
     const response = await fetch(URL);
     const data = await response.json();
@@ -18,6 +19,7 @@ class HomePage extends Component {
     this.fetchMovies();
   }
 
+  // button handle to compare movies
   onCompare = id => {
     const { movies, moviesToCompare } = this.state;
     const newMovie = movies.find(movie => movie.id === id);
@@ -25,6 +27,7 @@ class HomePage extends Component {
     this.setState({ moviesToCompare });
   };
 
+  // button handler to remove movies from being compare
   onRemoveCompare = id => {
     const moviesToCompare = this.state.moviesToCompare.filter(
       movie => movie.id !== id
@@ -53,7 +56,6 @@ class HomePage extends Component {
               onRemoveCompare={this.onRemoveCompare}
               onCompare={this.onCompare}
               movie={movie}
-              movies={this.state}
             />
           ))}
         </div>
