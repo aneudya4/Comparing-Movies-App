@@ -78,7 +78,7 @@ h1 {
 .card:hover .btn.compare_button,
 .card:hover .btn.remove_button {
   text-align: center;
-  display: inline;
+  /* display: inline; */
   left: 20%;
   width: 58%;
   visibility: visible;
