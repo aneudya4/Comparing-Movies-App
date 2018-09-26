@@ -65,9 +65,7 @@ class Card extends Component {
         {this.renderRemoveButton(movie)}
         <div className="stats">
           <div className="title">
-            <p>
-              <strong>{movie.title}</strong>
-            </p>
+            <h2>{movie.title}</h2>
             <Link to={`/${movie.id}`}> Watch trailer </Link>
           </div>
         </div>

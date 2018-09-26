@@ -8,7 +8,7 @@ h1 {
   text-align: center;
 }
 
-.cards p {
+.cards h2 {
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 1em;
@@ -19,6 +19,12 @@ h1 {
   position: relative;
   width: 20%;
   margin: 10px 2.5% 50px 2.5%;
+}
+
+.cards:after {
+  content: "";
+  display: block;
+  clear: both;
 }
 
 .card .stats {
@@ -38,7 +44,7 @@ h1 {
   text-align: center;
 }
 
-.title p {
+.title h2 {
   margin: 15px auto;
   transform: translateY(15px);
   width: 100%;
@@ -99,6 +105,16 @@ h1 {
   -ms-transform: translateY(-40px); /* Internet Explorer */
   -o-transform: translateY(-40px); /* Opera */
   transition: linear 210ms;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: lightcoral;
+  margin-top: 10px;
+}
+a:visited {
+  color: #6495ed;
 }
 
 @media screen and (max-width: 885px) {

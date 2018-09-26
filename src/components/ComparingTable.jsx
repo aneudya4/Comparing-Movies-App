@@ -9,7 +9,6 @@ class ComparingTable extends React.Component {
     movies.sort(
       (a, b) => parseFloat(b.vote_average) - parseFloat(a.vote_average)
     );
-
     // returning tables
     return movies.map(movie => (
       <tr key={movie.id}>
@@ -41,7 +40,6 @@ class ComparingTable extends React.Component {
     if (movies.length <= 1) {
       return null;
     }
-
     return (
       <React.Fragment>
         <p>Currently Comparing {movies.length} Movies</p>
