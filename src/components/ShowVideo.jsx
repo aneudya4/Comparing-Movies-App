@@ -18,14 +18,13 @@ class ShowVideo extends Component {
 
   componentDidMount() {
     this.fetchMoviesTrailers();
-
     window.scrollTo(0, 0);
   }
   render() {
     const { results } = this.state;
 
     if (results === undefined) {
-      return null;
+      return <div>Loading ....</div>;
     }
     return (
       <div className="trailer">
