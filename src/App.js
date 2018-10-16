@@ -9,7 +9,7 @@ class App extends Component {
       <div className="app">
         <Switch>
           <Route exact path="/Comparing-movies-app" component={HomePage} />
-          <Route path="/:id" component={ShowVideo} />
+          <Route exact path="/Comparing-movies-app/:id" component={ShowVideo} />
         </Switch>
       </div>
     );

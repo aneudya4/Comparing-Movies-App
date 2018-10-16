@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 class ShowVideo extends Component {
-  state = { results: {} };
+  state = { results: null };
 
   handleClick = () => {
     this.props.history.push("/Comparing-movies-app");
@@ -9,10 +9,12 @@ class ShowVideo extends Component {
 
   fetchMoviesTrailers = async () => {
     const id = this.props.match.params.id;
+
     const url = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=d35dda56d61ee0678a341b8d5c804efc&language=en-US`;
     const fetchigData = await fetch(url);
     const movieData = await fetchigData.json();
     const results = movieData.results[0];
+
     this.setState({ results });
   };
 
@@ -23,11 +25,12 @@ class ShowVideo extends Component {
   render() {
     const { results } = this.state;
 
-    if (results === undefined) {
-      return <div>Loading ....</div>;
+    if (!results) {
+      return <div>Trailer is being Loaded ....</div>;
     }
     return (
       <div className="trailer">
+        {console.log(this.state.results, "here")}
         <iframe
           title={results.name}
           width="720"

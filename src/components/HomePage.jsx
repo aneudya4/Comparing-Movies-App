@@ -37,7 +37,7 @@ class HomePage extends Component {
 
   render() {
     const { movies, moviesToCompare } = this.state;
-    if (movies.length === 0) return <h1>Movies Are Being Fetchs</h1>;
+    if (movies.length === 0) return <h1>Movies Are Being Fetch</h1>;
 
     return (
       <React.Fragment>
@@ -48,7 +48,7 @@ class HomePage extends Component {
             {` `}
             movies currently playing in theaters.
             <br /> Click two movies or more to start comparing them , movies
-            with a vote average less than 7 get a Red-Warning background
+            with a vote average less than 7 get a Red-Warning background.
           </p>
           {movies.map(movie => (
             <Card

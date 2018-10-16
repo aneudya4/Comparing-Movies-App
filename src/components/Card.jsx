@@ -66,7 +66,10 @@ class Card extends Component {
         <div className="stats">
           <div className="title">
             <h2>{movie.title}</h2>
-            <Link to={`/${movie.id}`}> Watch trailer </Link>
+            <Link to={`/Comparing-movies-app/${movie.id}`}>
+              {" "}
+              Watch trailer{" "}
+            </Link>
           </div>
         </div>
       </div>
