@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { key } from "../apiConfig/apiConfig";
 
 class ShowVideo extends Component {
   state = { results: null };
@@ -10,7 +11,7 @@ class ShowVideo extends Component {
   fetchMoviesTrailers = async () => {
     const id = this.props.match.params.id;
 
-    const url = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=d35dda56d61ee0678a341b8d5c804efc&language=en-US`;
+    const url = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${key}&language=en-US`;
     const fetchigData = await fetch(url);
     const movieData = await fetchigData.json();
     const results = movieData.results[0];
