@@ -11,7 +11,7 @@ class HomePage extends Component {
   fetchMovies = async () => {
     const response = await fetch(URL);
     const data = await response.json();
-    const movies = data.results.filter((data, i) => i < 8);
+    const movies = data.results.filter((data, i) => i < 9);
     return this.setState({ movies });
   };
 

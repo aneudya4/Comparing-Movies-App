@@ -52,7 +52,6 @@ class Card extends Component {
 
   render() {
     const { movie } = this.props;
-    // console.log(typeof this.props.movie);
     const { comparing } = this.state;
     return (
       <div className={`card ${comparing ? "comparing" : ""}`}>

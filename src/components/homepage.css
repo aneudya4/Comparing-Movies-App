@@ -7,9 +7,12 @@
 
 #root {
   background: #f9f9f9;
-  max-width: 1200px;
   margin: 0 auto;
   /* height: 970px; */
+}
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .trailer {

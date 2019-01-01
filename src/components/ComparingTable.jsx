@@ -58,8 +58,8 @@ class ComparingTable extends React.Component {
     );
   }
 }
-ComparingTable.prototypes = {
-  movies: PropTypes.object.isRequired
+ComparingTable.propTypes = {
+  movies: PropTypes.array.isRequired
 };
 
 export default ComparingTable;
